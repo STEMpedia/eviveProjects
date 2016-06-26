@@ -75,11 +75,11 @@ void printhistory(double first,double second,char sign){
   lcd.print("Previous---------------------------");
   lcd.setCursor(0,110);
   lcd.setTextColor(ST7735_CYAN,ST7735_BLACK);
-  lcd.print(first);
+  lcd.print(first,4);
   lcd.print(" ");
   lcd.print(sign);
   lcd.print(" ");
-  lcd.print(second);
+  lcd.print(second,4);
   lcd.setTextColor(ST7735_WHITE,ST7735_BLACK);
   lcd.setTextSize(2);
 }
@@ -103,7 +103,7 @@ void loop()
     else 
       first=-999999999999999; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }    //log ends 
   
@@ -117,7 +117,7 @@ void loop()
     else 
       first=0; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }    //sine ends 
   
@@ -131,7 +131,7 @@ void loop()
     else 
       first=1; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }     
    if(digitalRead(tangent)==HIGH)
@@ -144,7 +144,7 @@ void loop()
     else 
       first=0; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }   
 
@@ -158,7 +158,7 @@ void loop()
     else 
       first=0; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }    //asine ends 
   
@@ -172,7 +172,7 @@ void loop()
     else 
       first=1.57; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }     
    if(digitalRead(arctan)==HIGH)
@@ -185,7 +185,7 @@ void loop()
     else 
       first=0; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }   
 
@@ -199,7 +199,7 @@ void loop()
     else 
       first=0; 
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     }
   }   
 //************************sin, cos, tan, logarithm and inverse end************************ 
@@ -222,14 +222,14 @@ void loop()
     {
       lcd.setCursor(0,0);
     first = first * 10 + (customKey - '0');
-    lcd.print(first);
+    lcd.print(first,4);
     }
   else
   {
     lcd.setCursor(0,0);
     first=first+(customKey - '0')/decimals1;
     decimals1=decimals1*10;
-    lcd.print(first);
+    lcd.print(first,4);
   }
       break;
   case '+':
@@ -251,7 +251,7 @@ void loop()
     printhistory(first,second,'+');
     first = total, second = 0; // reset values back to zero for next use
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
      if(conti==1)
       goto A;
     else if(conti==2)  
@@ -282,7 +282,7 @@ void loop()
     printhistory(first,second,'-');
     first = total, second = 0; // reset values back to zero for next use
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
     if(conti==1)
       goto A;
     else if(conti==2)  
@@ -313,7 +313,7 @@ void loop()
     printhistory(first,second,'*');
     first = total, second = 0; // reset values back to zero for next use
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
      if(conti==1)
       goto A;
     else if(conti==2)  
@@ -348,7 +348,7 @@ void loop()
     printhistory(first,second,'/');
     first = total, second = 0; // reset values back to zero for next use
     lcd.setCursor(0,0);
-    lcd.print(first);
+    lcd.print(first,4);
      if(conti==1)
       goto A;
     else if(conti==2)  
@@ -400,14 +400,14 @@ double SecondNumber()
     {
     lcd.setCursor(0,40);
     second = second * 10 + (customKey - '0');
-    lcd.print(second);
+    lcd.print(second,4);
     }
   else
   {
     lcd.setCursor(0,40);
     second=second+(customKey - '0')/decimals2;
     decimals2=decimals2*10;
-    lcd.print(second);
+    lcd.print(second,4);
   }
     }
 
