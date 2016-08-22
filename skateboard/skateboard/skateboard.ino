@@ -16,10 +16,12 @@
  * * Cross = "o" for decreasing brightness of lights
  */
 
-//Motor.h library can be downloaded from 
+//Motor.h library can be downloaded from https://github.com/evivetoolkit/eviveProjects/tree/master/skateboard/motor
 #include <motor.h>
 // include the SPI library:
 #include <SPI.h>
+
+//Since the output of proximity is 0 or 12V, evive's sensing channel at ProbeV (has range of -30V to +30V) is used 
 int SPI_ADC_SS = 35;    // SPI ADC SS
 int ADC_RDY = 32;      // ADC Ready pin
 #define ADC_SPIMaxSpeed 5600000
